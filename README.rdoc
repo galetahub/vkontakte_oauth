@@ -6,6 +6,14 @@ Open API - система для разработчиков сторонних �
 
 == Install
 
+Via plugin:
+
+  rails plugin install git://github.com/galetahub/vkontakte_oauth.git
+
+Via gem:
+
+  gem 'vkontakte_oauth', :git => 'git://github.com/galetahub/vkontakte_oauth.git'
+
 Generate configuration file, copy "xd_receiver.html" to public folder and "vkontakte.js"
 
   rails generate vkontakte

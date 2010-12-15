@@ -1,4 +1,5 @@
 require 'uri'
+require 'logger'
 
 module Vkontakte
   module Oauth

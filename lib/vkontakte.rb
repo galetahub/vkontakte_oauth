@@ -3,7 +3,7 @@ module Vkontakte
   autoload :View,  'vkontakte/view'
   autoload :Utils, 'vkontakte/utils'
   autoload :Api,   'vkontakte/api'
-  autoload :Logger, 'logger'
+  autoload :Version, 'vkontakte/version'
 
   class << self
     def button(*args)

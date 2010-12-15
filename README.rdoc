@@ -1,0 +1,38 @@
+= VkontakteOauth
+
+Open API - система для разработчиков сторонних сайтов, которая предоставляет возможность легко авторизовывать пользователей ВКонтакте на Вашем сайте. Кроме этого, с согласия пользователей, вы сможете получить доступ к их друзьям, фотографиям, аудиозаписям, видеороликам, объявлениям и прочей информации ВКонтакте для более глубокой интеграции с Вашим проектом.
+
+В рамках подключения к Open API создается специальное приложение, которое позволяет использовать на Вашем сайте все текущие методы ВКонтакте API. Помимо этого, Open API предоставляет возможность упростить процесс регистрации новых пользователей на Вашем сайте, если у них уже есть учетная запись ВКонтакте. 
+
+== Install
+
+Generate configuration file, copy "xd_receiver.html" to public folder and "vkontakte.js"
+
+  rails generate vkontakte
+
+== View
+
+Via button
+
+  Vkontakte.button :id => "vk_button"
+
+  Vkontakte.button(:asynchronous => true, :callback => "/clients/vkontakte")
+
+== Controller
+
+  # POST /clients/vkontakte
+  def vkontakte
+    if data = Vkontakte.user_data(request.cookie_jar)
+      Rails.logger.info(data)
+      redirect_to '/'
+    else
+      render_unauthorized
+    end
+  end
+
+== Other vkontakte ruby plugins
+
+ * http://github.com/PavelTyk/vkontakte_api
+ * http://github.com/strock/vkontakte_openapi
+
+Copyright (c) 2010 Brainberry, released under the MIT license

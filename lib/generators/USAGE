@@ -1,0 +1,4 @@
+Vkontakte
+=============
+# Generate configuration file, copy html and js files
+  rails generate vkontakte
